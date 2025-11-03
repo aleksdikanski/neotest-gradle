@@ -45,7 +45,7 @@ local function get_test_results_directory(gradle_executable, project_directory)
     end
   end
 
-  return ''
+  return project_directory .. lib.files.sep .. 'build' .. lib.files.sep .. 'results' .. lib.files.sep .. 'test'
 end
 
 --- Takes a NeoTest tree object and iterate over its positions. For each position
