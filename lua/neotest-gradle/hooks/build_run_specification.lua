@@ -40,7 +40,7 @@ local function get_test_results_directory(gradle_executable, project_directory)
   local output_lines = vim.split(output.stdout or '', '\n')
 
   for _, line in pairs(output_lines) do
-    if line:match('testResultsDir: ') then
+    if line:match('testResultsDir: ') and not line:match('testResultsDir: null') then
       return line:gsub('testResultsDir: ', '') .. lib.files.sep .. 'test'
     end
   end
